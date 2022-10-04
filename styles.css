@@ -1,0 +1,59 @@
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.firstRow{
+    display: flex;
+    
+    
+}
+.secondRow{
+    display: flex;
+    
+}
+.thirdRow{
+    display: flex;
+    
+}
+.fourthRow{
+    display: flex;
+    
+}
+.fifthRow{
+    display: flex;
+    
+    
+}
+.container {
+    display: flex;
+    border: black solid 2px;
+    height: 500px;
+    width: 300px;
+}
+.screen {
+    width: 100%;
+    height: 70px;
+    background-color: grey;
+}
+button {
+    border: none;
+}
+.calculator {
+    height: 500px;
+    width: 300px;
+    
+    
+}
+button{
+    height: 86px;
+    width: 100px;
+    
+}
