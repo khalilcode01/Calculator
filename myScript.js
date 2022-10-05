@@ -1,5 +1,5 @@
 function add(a, b) {
-    return a + b;
+    return +a + +b;
 }
 function subtract(a, b) {
     return a - b;
@@ -27,25 +27,59 @@ display.classList.add('content');
 let operators = document.querySelectorAll('.op');
 let proNum = document.querySelector('.content');
 let clear = document.querySelector('.clear');
-let pool = 0;
+let equal = document.querySelector('.equal');
+let comma = document.querySelector('.comma');
+let operator = 0;
 let value = 0;
+let pool = 1;
+let value2 = 0;
+let valueFinal = 0;
+let first = 1;
 numbers.forEach(buttons => {
     buttons.addEventListener('click', () => {
         display.textContent += buttons.textContent;
-        value = buttons.textContent;
+        if(pool === 1) {
+        value += buttons.textContent;
+        }
+        if(pool === 0){
+            value2 += buttons.textContent;
+            display.textContent = +value2;
+        }
+        
         screen.appendChild(display);
-       
+        
     });
 });
 operators.forEach(op => {
     op.addEventListener('click', () => {
-        display.textContent += op.textContent;
-        let value = buttons.textContent;
-        screen.appendChild(display);
-        
+        operator = op.textContent;
+        if(first){
+            pool = 0;
+            first = 0;
+        }
     });
 
 });
 clear.addEventListener('click', () =>{
     display.textContent = '';
+    value = 0;
+    operator = 0;
+    pool = 1;
+    value2 = 0;
+    valueFinal = 0;
+    first = 1;
+});
+equal.addEventListener('click', () => {
+    value = operate(operator, value, value2);
+    value2 = 0;
+    display.textContent = value;
+});
+comma.addEventListener('click', () => {
+    display.textContent += '.';
+    if(pool === 1){
+        value += '.';
+    }
+    if(pool === 0){
+        value2 += '.';
+    }
 });
