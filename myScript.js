@@ -42,6 +42,17 @@ let value2 = 0;
 let valueFinal = 0;
 let first = 1;
 let commaOp = 1;
+
+
+function clearAll(){
+    display.textContent = '';
+    value = 0;
+    operator = 0;
+    pool = 1;
+    value2 = 0;
+    valueFinal = 0;
+    first = 1;
+}
 numbers.forEach(buttons => {
     buttons.addEventListener('click', () => {
         display.textContent += buttons.textContent;
@@ -69,18 +80,18 @@ operators.forEach(op => {
 
 });
 clear.addEventListener('click', () =>{
-    display.textContent = '';
-    value = 0;
-    operator = 0;
-    pool = 1;
-    value2 = 0;
-    valueFinal = 0;
-    first = 1;
+    clearAll();
 });
 equal.addEventListener('click', () => {
     value = operate(operator, value, value2);
+    if(value === Infinity){
+        display.textContent = 'gotcha ;)';
+        clearAll();
+    }
+    else{
     value2 = 0;
     display.textContent = value;
+    }
 });
 comma.addEventListener('click', () => {
     if(!value.includes('.')){
