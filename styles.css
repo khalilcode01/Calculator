@@ -10,38 +10,25 @@ body {
     justify-content: center;
     align-items: center;
 }
-.firstRow{
-    display: flex;
-    
-    
-}
-.secondRow{
-    display: flex;
-    
-}
-.thirdRow{
-    display: flex;
-    
-}
-.fourthRow{
-    display: flex;
-    
-}
+.firstRow,
+.secondRow,
+.thirdRow,
+.fourthRow,
 .fifthRow{
-    display: flex;
-    
-    
+    display: flex;   
 }
+
 .container {
     display: flex;
-    border: black solid 2px;
+    border: black solid 3px;
     height: 500px;
     width: 300px;
 }
 .screen {
     width: 100%;
     height: 70px;
-    background-color: grey;
+    background-color: #b2b9b7;
+    
 }
 button {
     border: none;
@@ -55,5 +42,14 @@ button {
 button{
     height: 86px;
     width: 100px;
+    
+}
+.content {
+    width: 100%;
+    height: 70px;
+    text-align: end;
+    padding-top: 10px;
+    font-size: 40px;
+    
     
 }

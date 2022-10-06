@@ -77,8 +77,8 @@ equal.addEventListener('click', () => {
     display.textContent = value;
 });
 comma.addEventListener('click', () => {
-    if(commaOp){
-    commaOp = 0;
+    if(!value.includes('.')){
+        
     display.textContent += '.';
     if(pool === 1){
         value += '.';
