@@ -10,6 +10,9 @@ function multiply(a, b) {
 function divide(a, b) {
     return a / b;
 }
+function factorial(a, b){
+    return a % b;
+}
 function operate(op, a, b) {
     if(op === '+') 
     return add(a, b);
@@ -17,8 +20,10 @@ function operate(op, a, b) {
     return subtract(a, b);
     else if(op === '*')
     return multiply(a, b);
-    else if(op === '/');
+    else if(op === '/')
     return divide(a, b);  
+    else if(op === '%')
+    return factorial(a, b);
 }
 let numbers = document.querySelectorAll('.num');
 let screen = document.querySelector('.screen');
@@ -29,6 +34,7 @@ let proNum = document.querySelector('.content');
 let clear = document.querySelector('.clear');
 let equal = document.querySelector('.equal');
 let comma = document.querySelector('.comma');
+let switchTo = document.querySelector('.change');
 let operator = 0;
 let value = 0;
 let pool = 1;
@@ -88,3 +94,7 @@ comma.addEventListener('click', () => {
     }
     }
 });
+switchTo.addEventListener('click', () => {
+    value *= -1;
+    display.textContent = value;
+})
