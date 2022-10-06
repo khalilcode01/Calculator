@@ -95,6 +95,15 @@ comma.addEventListener('click', () => {
     }
 });
 switchTo.addEventListener('click', () => {
-    value *= -1;
-    display.textContent = value;
+    if(pool === 1){
+        value *= -1;
+        display.textContent = value;
+    }
+    if(pool === 0){
+        value2 *= -1; 
+        display.textContent = value2;
+    }
+    
+    
+    
 })
