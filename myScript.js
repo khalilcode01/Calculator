@@ -14,6 +14,8 @@ function factorial(a, b){
     return a % b;
 }
 function operate(op, a, b) {
+    if(op === 0)
+    return 0;
     if(op === '+') 
     return add(a, b);
     else if(op === '-')
