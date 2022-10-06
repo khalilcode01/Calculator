@@ -35,6 +35,7 @@ let pool = 1;
 let value2 = 0;
 let valueFinal = 0;
 let first = 1;
+let commaOp = 1;
 numbers.forEach(buttons => {
     buttons.addEventListener('click', () => {
         display.textContent += buttons.textContent;
@@ -52,6 +53,7 @@ numbers.forEach(buttons => {
 });
 operators.forEach(op => {
     op.addEventListener('click', () => {
+        commaOp = 1;
         operator = op.textContent;
         if(first){
             pool = 0;
@@ -75,11 +77,14 @@ equal.addEventListener('click', () => {
     display.textContent = value;
 });
 comma.addEventListener('click', () => {
+    if(commaOp){
+    commaOp = 0;
     display.textContent += '.';
     if(pool === 1){
         value += '.';
     }
     if(pool === 0){
         value2 += '.';
+    }
     }
 });
